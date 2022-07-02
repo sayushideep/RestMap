@@ -20,6 +20,7 @@ export class MapComponent implements OnInit {
     this.map = L.map('map', {
       center: this.centroid,
       zoom: 12,
+      zoomControl: false,
     });
     this.fixMarker();
 
@@ -45,6 +46,12 @@ export class MapComponent implements OnInit {
     //   .forEach((x) => x.addTo(this.map as any));
 
     tiles.addTo(this.map);
+
+    L.control
+      .zoom({
+        position: 'bottomright',
+      })
+      .addTo(this.map);
   };
 
   private fixMarker = (): void => {
