@@ -12,7 +12,7 @@
       </mat-form-field>
     </div>
     <h2 style="text-align: center">OR</h2>
-    <div>
+    <!-- <div>
       <mat-form-field appearance="outline">
         <mat-label>Select Range</mat-label>
         <mat-select>
@@ -21,6 +21,33 @@
           <mat-option value="3">In 1.5 kilometers</mat-option>
         </mat-select>
       </mat-form-field>
+    </div> -->
+    <div>
+      <button mat-raised-button color="accent" [matMenuTriggerFor]="clickmenu">
+        <mat-icon> location_on</mat-icon>
+        <mat-label> Find a toilet near me </mat-label>
+        <mat-icon>keyboard_arrow_down</mat-icon>
+      </button>
+      <mat-menu #clickmenu="matMenu" yPosition="below">
+        <!-- <button mat-menu-item (click)="clickMenuItem($event)">
+          In 500 meters
+        </button>
+        <button mat-menu-item onclick="clickMenuItem($event)">
+          In 1 kilometer
+        </button>
+        <button mat-menu-item onclick="clickMenuItem($event)">
+          In 1.5 kilometer
+        </button> -->
+        <button
+          mat-menu-item
+          *ngFor="let range of ranges"
+          (click)="clickMenuItem(range)"
+        >
+          {{ range }}
+        </button>
+      </mat-menu>
     </div>
+    <br />
+    <h4>{{ selectedMenu }}</h4>
   </mat-card>
 </div>

@@ -34,12 +34,22 @@ Sample response
         {
             "id": 1,
             "name": "Sarath city capital",
+            "location": {
+                "latitude": "17.4576117",
+                "longitude": "78.3639169",
+                "city": "Hyderabad"
+            },
             "imgSrc": "ams.com/example1",
             "rating": 4.5
         },
         {
             "id": 2,
             "name": "Inorbit mall",
+            "location": {
+                "latitude": "17.4343744",
+                "longitude": "78.38442",
+                "city": "Hyderabad"
+            },
             "imgSrc": "ams.com/example2",
             "rating": 4
         },

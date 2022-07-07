@@ -11,6 +11,7 @@ import { MapComponent } from './map/map.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchComponent } from './search/search.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [AppComponent, MapComponent, ToolbarComponent, SearchComponent],
@@ -23,6 +24,7 @@ import { SearchComponent } from './search/search.component';
     MatCardModule,
     MatInputModule,
     MatSelectModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
