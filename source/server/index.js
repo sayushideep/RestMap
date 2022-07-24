@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const helmet= require("helmet");
 const morgan= require("morgan");
 const dotenv= require("dotenv");
+var cors = require("cors");
 const app= express();
 const restroomRouter= require("./routes/restroom");
 
@@ -15,6 +16,7 @@ mongoose.connect(process.env.MONGO_URL,
 
 
 //midleware
+app.use(cors());
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));

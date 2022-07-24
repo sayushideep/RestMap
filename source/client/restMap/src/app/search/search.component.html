@@ -43,11 +43,9 @@
           *ngFor="let range of ranges"
           (click)="clickMenuItem(range)"
         >
-          {{ range }}
+          In {{ range }} kilometers
         </button>
       </mat-menu>
     </div>
-    <br />
-    <h4>{{ selectedMenu }}</h4>
   </mat-card>
 </div>

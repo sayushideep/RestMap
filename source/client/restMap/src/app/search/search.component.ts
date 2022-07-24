@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -6,15 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css'],
 })
 export class SearchComponent implements OnInit {
-  selectedMenu: String = '';
-  ranges: String[];
-  constructor() {
-    this.ranges = ['In 500 meters', 'In 1 kilometer', 'In 1.5 kilometers'];
+  ranges: number[];
+  constructor(private router: Router) {
+    this.ranges = [0.5, 1, 1.5];
   }
 
   ngOnInit(): void {}
 
-  clickMenuItem(value: String) {
-    this.selectedMenu = value;
+  clickMenuItem(value: number) {
+    this.router.navigate(['restrooms'], {
+      state: { distanceInMeter: value * 1000 },
+    });
+    // this.router.navigateByUrl('/restrooms', { state: { distance: value } });
   }
 }

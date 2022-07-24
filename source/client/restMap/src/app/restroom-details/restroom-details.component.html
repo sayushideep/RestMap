@@ -1,0 +1,29 @@
+<div>
+  <h1>{{ restroomDetails.rrname }}</h1>
+  <div>Rating - {{ restroomDetails.rating }}/5</div>
+  <mat-card>
+    <mat-card-title>Facilities Availabile - </mat-card-title>
+    <mat-card-content>
+      <!-- <div *ngIf="restroomDetails.amenities.accessible"><mat-icon>accessible</mat-icon><span>Accessible</span></div> -->
+      <div *ngIf="restroomDetails.amenities.nursing_room">
+        <mat-icon>baby_changing_station</mat-icon><span>Nursing room</span>
+      </div>
+      <div *ngIf="restroomDetails.amenities.sanitary_napkins">
+        <mat-icon>female</mat-icon><span>Sanitary Napkin</span>
+      </div>
+      <div *ngIf="restroomDetails.amenities.dustbin">
+        <mat-icon>delete</mat-icon><span>Dustbin</span>
+      </div>
+      <div *ngIf="restroomDetails.amenities.clean_drinking_water">
+        <mat-icon>water_drop</mat-icon><span>Clean Drinking Water</span>
+      </div>
+      <!-- <div *ngIf="restroomDetails.amenities.accessible"><mat-icon>currency_rupee</mat-icon><span>Free</span></div> -->
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-content>
+      <div>Address: {{ restroomDetails.address }}</div>
+    </mat-card-content>
+  </mat-card>
+</div>
